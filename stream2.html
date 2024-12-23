@@ -62,9 +62,15 @@
       font-family: monospace;
       color: #00ff00;
       background: rgba(0, 0, 0, 0.5);
-      white-space: pre-wrap; /* Preserve whitespace and wrap */
-      word-wrap: break-word; /* Break long words */
+      white-space: nowrap; /* Preserve whitespace and wrap */
+      word-wrap: normal; /* Break long words */
       max-width: 100%; /* Ensure container doesn't overflow */
+      min-width: 0;
+    }
+    /* Add this new style for the entries */
+    .log-entry {
+        min-width: min-content; /* Ensures content doesn't get cut off */
+        display: block; /* Makes sure each entry takes full width */
     }
     
     /* Styles for the feed content */
@@ -196,6 +202,10 @@
 
       .log-content::-webkit-scrollbar-horizontal {
         height: 8px;
+      }
+
+      .log-content::-webkit-scrollbar-track-horizontal {
+          background: rgba(0, 0, 0, 0.2);
       }
 
     }
