@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>About BIOTICA EXP</title>
+  <title>BIOTICA EXP - About</title>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
   <meta name="description" content="About BIOTICA EXP: The Pavlov Test—The Next Generation of AI Evaluation">
   <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/65h45zBw/awge-halftone-logo.png">
@@ -15,9 +15,118 @@
     .awge-tube-border {
       background-image: url("./assets/border-stretched-2.png") !important;
     }
-    @media screen and (max-width: 480px) and (orientation: portrait), screen and (max-height: 480px) and (orientation: landscape) {
-      .awge-tube-border-mobile {
-        background-image: url("./assets/border-stretched-2.png") !important;
+    
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      color: #00ff00;
+      font-family: monospace;
+    }
+
+    .about-nav {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      right: 20px;
+      display: flex;
+      justify-content: space-between;
+      z-index: 9999;
+    }
+
+    .nav-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-button:hover {
+      transform: scale(1.1);
+    }
+
+    .about-header {
+      text-align: center;
+      margin-bottom: 40px;
+      padding-top: 60px;
+    }
+
+    .about-header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+    }
+
+    .about-header h2 {
+      font-size: 1.5em;
+      opacity: 0.8;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 30px;
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(0, 255, 0, 0.2);
+      padding: 20px;
+    }
+
+    .about-sidebar {
+      border-right: 1px solid rgba(0, 255, 0, 0.2);
+      padding-right: 20px;
+    }
+
+    .about-sidebar button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background: none;
+      border: 1px solid rgba(0, 255, 0, 0.2);
+      color: #00ff00;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .about-sidebar button:hover,
+    .about-sidebar button.active {
+      background: rgba(0, 255, 0, 0.1);
+    }
+
+    .about-main {
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .content-section {
+      display: none;
+    }
+
+    .content-section.active {
+      display: block;
+    }
+
+    .content-section h3 {
+      margin-bottom: 20px;
+      font-size: 1.5em;
+    }
+
+    .content-section p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .about-sidebar {
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 255, 0, 0.2);
+        padding-bottom: 20px;
+        margin-bottom: 20px;
       }
     }
   </style>
@@ -26,15 +135,86 @@
   <div id="awge-tube-border" class="awge-tube-border"></div>
   <div class="awge-tube-shape">
     <div id="awge-content" class="awge-content">
-      <div id="root"></div>
+      <div class="about-nav">
+        <a href="mainmenu.html" class="nav-button">
+          <img src="./assets/logo.png" alt="Home" style="height: 35px;">
+        </a>
+      </div>
+
+      <div class="about-container">
+        <div class="about-header">
+          <h1>The Mice and the Machine</h1>
+          <h2>A Manifesto for the Pavlov Test—The Next Generation of AI Evaluation</h2>
+        </div>
+
+        <div class="about-content">
+          <div class="about-sidebar">
+            <button class="section-btn active" data-section="intro">Introduction</button>
+            <button class="section-btn" data-section="paradigm">The Pavlov Test</button>
+            <button class="section-btn" data-section="turing">Beyond Turing</button>
+            <button class="section-btn" data-section="domestication">Domestication & AI</button>
+            <button class="section-btn" data-section="evidence">Evidence & Future</button>
+          </div>
+
+          <div class="about-main">
+            <div id="intro" class="content-section active">
+              <h3>Introduction</h3>
+              <p>We stand on the cusp of a technological and biological revolution—a crossroads where artificial intelligence and animal cognition converge in a way that few could have imagined. The "Turing test" as we know it has grown stale.</p>
+              <p>Originally conceived by Alan Turing in 1950, the Turing test challenged machines to mimic human conversation so convincingly that a human judge could not reliably distinguish AI from human. It was revolutionary for its time, but in an era when Large Language Models (LLMs) can produce startlingly human-like text, the simple format of guessing games through a chat interface no longer feels like a sufficient measure.</p>
+            </div>
+
+            <div id="paradigm" class="content-section">
+              <h3>The Pavlov Test: A New Paradigm</h3>
+              <p>We propose a new standard we call the "Pavlov Test." Named in honor of Ivan Pavlov, who famously demonstrated the conditioning of dogs through stimuli and rewards, this test asks: can an AI, with no human intermediary, shape the behavior of another living organism through subtle environmental controls?</p>
+              <p>While Turing's measure dwelled in the realm of conversation, the Pavlov Test moves us into the domain of sensory-motor reality, focusing on whether an AI can understand, predict, and influence the actions of living beings—first mice, and ultimately more complex species.</p>
+            </div>
+
+            <div id="turing" class="content-section">
+              <h3>From Turing's Chatroom to the Animal Habitat</h3>
+              <p>The Turing test was a stunning leap forward in its day, pushing us to consider whether machines could "think" by simulating conversation. But modern LLMs have outgrown this benchmark. They can craft poetry, summarize dense academic papers, and write code. And yet, they remain trapped in a purely textual universe, devoid of real sensorimotor grounding.</p>
+              <p>The Pavlov Test sets a more ambitious challenge: the AI observes mice in a controlled environment, uses cues like sound and water rewards, and attempts to train them to perform actions—such as pressing a lever. Success demands not just clever wordplay, but understanding cause-and-effect in a living system.</p>
+            </div>
+
+            <div id="domestication" class="content-section">
+              <h3>The Importance of Domestication to Human Intelligence</h3>
+              <p>Our ability to domesticate and interact with animals—dogs, horses, cattle—has been pivotal to human civilization and intelligence. This relationship influenced our cognitive evolution. Humans learned to control and predict the behavior of other species, leveraging animals for agriculture, transportation, and companionship.</p>
+              <p>By challenging AI to do something similarly complex—shaping another species' behavior—the Pavlov Test taps into a deep well of evolutionary intelligence. In a sense, we are asking AI to replicate a small slice of what made human cognition so successful: the subtle art of influencing and harmonizing with other living beings.</p>
+            </div>
+
+            <div id="evidence" class="content-section">
+              <h3>Evidence for the Next Generation of AI Testing</h3>
+              <p>Research in embodied AI and robotics consistently shows that navigating the real world challenges machines far beyond what text can. Mice, unlike simulated agents, have unpredictable behaviors and internal motivations. Mastering this environment forces AI into real-time adaptation.</p>
+              <p>Traditional Turing-like tests rely on a single modality—language. The Pavlov Test demands integration of visual, auditory, and even tactile information through reward dispensing. This complexity better mirrors the full richness of human learning and intelligence.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div id="awge-overlay" class="awge-overlay"></div>
   </div>
 
   <script>
+    // Initialize the preloader and glitch effects
     setTimeout(preloader, 1000);
     initImageGlitch();
     preloader();
+
+    // Handle section switching
+    document.querySelectorAll('.section-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        // Update button states
+        document.querySelectorAll('.section-btn').forEach(btn => {
+          btn.classList.remove('active');
+        });
+        button.classList.add('active');
+
+        // Update content sections
+        document.querySelectorAll('.content-section').forEach(section => {
+          section.classList.remove('active');
+        });
+        document.getElementById(button.dataset.section).classList.add('active');
+      });
+    });
   </script>
 </body>
 </html>
