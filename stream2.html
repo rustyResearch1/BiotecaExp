@@ -57,10 +57,14 @@
     .log-content {
       flex: 1;
       overflow-y: auto;
+      overflow-x: auto; /* Allow horizontal scrolling */
       padding: 10px;
       font-family: monospace;
       color: #00ff00;
       background: rgba(0, 0, 0, 0.5);
+      white-space: pre-wrap; /* Preserve whitespace and wrap */
+      word-wrap: break-word; /* Break long words */
+      max-width: 100%; /* Ensure container doesn't overflow */
     }
     
     /* Styles for the feed content */
@@ -189,6 +193,11 @@
         width: 100%;
         height: 35vh;
       }
+
+      .log-content::-webkit-scrollbar-horizontal {
+        height: 8px;
+      }
+
     }
   </style>
 </head>
