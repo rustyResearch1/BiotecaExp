@@ -57,21 +57,24 @@
     .log-content {
       flex: 1;
       overflow-y: auto;
-      padding: 10px;
+      padding: 15px 20px; /* Increased padding */
       font-family: monospace;
       color: #00ff00;
       background: rgba(0, 0, 0, 0.5);
       white-space: pre-wrap; /* Allow wrapping while preserving spaces */
       word-break: break-word; /* Break words when necessary */
+      box-sizing: border-box; /* Ensure padding is included in width */
       max-width: 100%;
       min-width: 0;
     }
 
     /* Style for the entries */
     .log-entry {
-        display: block;
-        margin-bottom: 4px; /* Add some spacing between entries */
-        line-height: 1.4; /* Improve readability */
+      display: block;
+      margin-bottom: 4px;
+      line-height: 1.4;
+      padding-right: 15px; /* Add right padding to entries */
+      margin-right: 8px; /* Add margin to prevent text touching scrollbar */
     }
     
     /* Styles for the feed content */
@@ -89,17 +92,19 @@
       text-decoration: underline;
     }
 
+    /* Update scrollbar styling */
     .log-content::-webkit-scrollbar {
       width: 8px;
-    }
-
-    .log-content::-webkit-scrollbar-track {
       background: rgba(0, 0, 0, 0.2);
     }
 
     .log-content::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.1);
       border-radius: 4px;
+    }
+
+    .log-content::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
     }
 
     .video-wrapper {
@@ -208,6 +213,18 @@
       .log-content::-webkit-scrollbar-track-horizontal {
           background: rgba(0, 0, 0, 0.2);
       }
+
+      /* Ensure mobile responsiveness */
+    @media (max-width: 1024px) {
+      .log-container {
+        max-width: none;
+        width: 100%;
+      }
+      
+      .log-content {
+        padding: 15px;
+      }
+    }
 
     }
   </style>
