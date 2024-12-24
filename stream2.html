@@ -57,20 +57,21 @@
     .log-content {
       flex: 1;
       overflow-y: auto;
-      overflow-x: auto; /* Allow horizontal scrolling */
       padding: 10px;
       font-family: monospace;
       color: #00ff00;
       background: rgba(0, 0, 0, 0.5);
-      white-space: nowrap; /* Preserve whitespace and wrap */
-      word-wrap: normal; /* Break long words */
-      max-width: 100%; /* Ensure container doesn't overflow */
+      white-space: pre-wrap; /* Allow wrapping while preserving spaces */
+      word-break: break-word; /* Break words when necessary */
+      max-width: 100%;
       min-width: 0;
     }
-    /* Add this new style for the entries */
+
+    /* Style for the entries */
     .log-entry {
-        min-width: min-content; /* Ensures content doesn't get cut off */
-        display: block; /* Makes sure each entry takes full width */
+        display: block;
+        margin-bottom: 4px; /* Add some spacing between entries */
+        line-height: 1.4; /* Improve readability */
     }
     
     /* Styles for the feed content */
