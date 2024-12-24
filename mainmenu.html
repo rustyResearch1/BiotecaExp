@@ -48,6 +48,23 @@
         background-image: url("./assets/border-stretched-2.png") !important;
       }
     }
+    /* Added video styling */
+    video.home-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    video.home-video-gif-mobile {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
   </style>
 </head>
 <body>
@@ -81,7 +98,9 @@
         <div class="home-video-parent">
           <button id="home-video-text" class="home-video-text">MEDIA</button>
           <img id="home-video-gif" class="home-video-gif" src="./inpc_files/vhs-camera.gif" alt="Media button Translucent spinning camera gif ">
-          <img src="./inpc_files/ingen-background.gif" class="home-video" width="10vh" height="10vh" alt="Background Injured Generation AWGE gif">
+          <video class="home-video" autoplay loop muted playsinline>
+            <source src="./assets/IMG_4499.MOV" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
